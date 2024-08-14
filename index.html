@@ -1,0 +1,209 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chhayansh Sahu</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #f0f0f0;
+            background-color: #1c1c1c;
+            margin: 0;
+            padding: 0;
+            overflow-y: auto;
+        }
+
+        /* Header and Footer Styles */
+        header, footer {
+            background-color: #333;
+            color: #f0f0f0;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header p {
+            margin: 10px 0;
+            font-size: 18px;
+            color: #ccc;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: auto;
+        }
+
+        h1, h2 {
+            margin-top: 0;
+            color: #fff;
+        }
+
+        /* Portfolio Item Styles */
+        .portfolio-item {
+            margin-bottom: 30px;
+        }
+
+        .portfolio-item img, .portfolio-item video {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            cursor: pointer;
+        }
+
+        /* Dropdown Content Styles */
+        .dropdown-content {
+            display: none;
+            margin-top: 10px;
+        }
+
+        .dropdown-button {
+            background-color: #444;
+            color: #fff;
+            border: none;
+            padding: 15px;
+            cursor: pointer;
+            text-align: left;
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: background-color 0.3s;
+        }
+
+        .dropdown-button:hover {
+            background-color: #555;
+        }
+
+        a {
+            color: #ffcc00;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Separator Styles */
+        .separator {
+            border-top: 1px solid #444;
+            margin: 30px 0;
+        }
+    </style>
+    <script>
+        // Function to toggle dropdown content visibility
+        function toggleDropdown(id) {
+            var content = document.getElementById(id);
+            content.style.display = content.style.display === "block" ? "none" : "block";
+        }
+
+        // Function to ensure video plays on hover
+        document.addEventListener('DOMContentLoaded', function() {
+            var videos = document.querySelectorAll('video');
+            videos.forEach(function(video) {
+                video.addEventListener('mouseenter', function() {
+                    video.play();
+                });
+                video.addEventListener('mouseleave', function() {
+                    video.pause();
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <h1>Chhayansh Sahu</h1>
+        <p>Game Developer & 3D Artist</p>
+        <nav>
+            <a href="#about">About Me</a> | 
+            <a href="#portfolio">Portfolio</a> | 
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- About Me Section -->
+    <section id="about" class="container">
+        <h2>About Me</h2>
+        <p>Hello! I'm Chhayansh Sahu, a BTech student in Electronic and Communication Engineering. I have a deep passion for game development and 3D modeling, with hands-on experience in Unity and Blender.</p>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="container">
+        <h2>Portfolio</h2>
+        
+        <!-- Game Development Projects Dropdown -->
+        <button class="dropdown-button" onclick="toggleDropdown('game-projects')">Game Development Projects</button>
+        <div id="game-projects" class="dropdown-content">
+            <!-- Game Project 1 -->
+            <p>A simple 2D game where I learned key concepts like Rigidbody physics, object instantiation, and prefab management.</p> 
+            <div class="portfolio-item">
+                <video width="600" height="400" controls>
+                    <source src="Image/FirstGame.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="separator"></div>
+            
+            <!-- Game Project 2 -->
+            <p>I created a small third-person shooter game, learning about character control, Cinemachine, vehicle control, animation, and AI movement.</p>
+            <div class="portfolio-item">
+                <img src="Image/TPS.png" alt="Game Project" width="500" height="400">
+                <img src="Image/TPS2.png" alt="Game Project" width="500" height="400">
+                <video width="600" height="400" controls>
+                    <source src="Image/TPSVIdeo (1).mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <p>In-game video.</p>
+            </div>
+
+           
+        </div>
+
+        <!-- Separator -->
+        <div class="separator"></div>
+        
+        <!-- Blender Projects Dropdown -->
+        <button class="dropdown-button" onclick="toggleDropdown('blender-projects')">Blender Projects</button>
+        <div id="blender-projects" class="dropdown-content">
+            <!-- Blender Project 1 -->
+            <div class="portfolio-item">
+                <img src="Image/monster.jpg" alt="Blender Project" width="500" height="200">
+                <img src="Image/PolyGirl.jpg" alt="Blender Project" width="500" height="600">
+                <p>These 3D models showcase my skills in character design and modeling. The Monster model features detailed sculpting and rigging, while the PolyGirl model highlights efficient low-poly techniques.</p>
+            </div>
+
+            <!-- Blender Project 2 -->
+            <div class="portfolio-item">
+                <video width="600" height="400" controls>
+                    <source src="Image/ConverBeltAnim.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <p>A small animation of a conveyor belt created in Blender, demonstrating smooth movement and realistic mechanics in a 3D environment.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="container">
+        <h2>Contact</h2>
+        <p>Feel free to reach out to me through the following channels:</p>
+        <ul>
+            <li>Email: <a href="mailto:chhayanshsahu16@gmail.com">chhayanshsahu16@gmail.com</a></li>
+            <li>LinkedIn: <a href="https://www.linkedin.com/in/your-profile">LinkedIn Profile</a></li>
+        </ul>
+    </section> 
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 Chhayansh Sahu. All rights reserved.</p>
+    </footer>
+</body>
+</html>
